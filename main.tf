@@ -53,7 +53,7 @@ resource "citrixadc_cspolicy" "cs_policy_gw" {
 # Add Content Switching vServer
 #####
 resource "citrixadc_csvserver" "cs_vserver" {
-  name            = var.adc-cs.vserver_name
+  name            = "cs_vs_${var.adc-cs.vserver_name}.${var.adc-base.fqdn_ext}_${var.adc-cs.vserver_type}_${var.adc-cs.vserver_port}"
   ipv46           = var.adc-cs.vserver_ip
   port            = var.adc-cs.vserver_port
   servicetype     = var.adc-cs.vserver_type
